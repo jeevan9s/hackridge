@@ -1,6 +1,7 @@
+// src/components/layout/Sidebar.jsx
 import { cn } from '@/lib/utils';
-import { LayoutDashboard, BarChart3, Settings } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { LayoutDashboard, BarChart3, User, BellIcon } from 'lucide-react';
+import { NavLink } from 'react-router-dom'; // Import NavLink
 
 interface SidebarProps {
   isOpen: boolean;
@@ -8,9 +9,10 @@ interface SidebarProps {
 }
 
 const menuItems = [
-  { icon: LayoutDashboard, label: 'Overview' },
-  { icon: BarChart3, label: 'Analytics' },
-  { icon: Settings, label: 'Settings' },
+  { icon: LayoutDashboard, label: 'Analytics', path: '/' },
+  { icon: BarChart3, label: 'Goals', path: '/analytics' },
+  { icon: User, label: 'Info', path: '/info' },
+  {icon: BellIcon, label: 'Alert', path: '/alert' }
 ];
 
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
@@ -30,22 +32,26 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         )}
       >
         <div className="flex h-16 items-center border-b px-6">
-          <h2 className="text-lg font-semibold">Analytics Dashboard</h2>
+          <h2 className="text-lg font-semibold">AllHealth</h2>
         </div>
-
-        
 
         <div className="flex-1 overflow-auto py-4">
           <nav className="grid gap-1 px-2">
             {menuItems.map((item) => (
-              <Button
+              <NavLink
                 key={item.label}
-                variant="secondary"
-                className="flex w-full items-center justify-start gap-3 px-3 hover:border-red-400 .3px"
+                to={item.path}
+                className={({ isActive }) =>
+                  cn(
+                    'text-black font-medium flex items-center justify-start gap-3 px-3 py-2 rounded hover:bg-blue-50 ',
+                    isActive ? 'bg-gray-200 font-semibold' : ''
+                  )
+                }
+                onClick={onClose} // Close sidebar on link click (useful for mobile)
               >
                 <item.icon className="h-4 w-4" />
                 {item.label}
-              </Button>
+              </NavLink>
             ))}
           </nav>
         </div>

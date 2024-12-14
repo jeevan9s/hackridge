@@ -2,7 +2,7 @@ import { useState } from 'react'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
-const API_KEY = "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";
+const API_KEY = "";
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
   "role": "system", "content": "the content you will be receiving is the latest values for heart rate, blood pressure, and respiratory rate. Based on these you should give professional healthcare advice including whether these values are in the healthy range, and then give advice such as diet improvements ." 
@@ -11,9 +11,9 @@ const systemMessage = { //  Explain things like you're talking to a software pro
 function ChatBot() {
   const [messages, setMessages] = useState([
     {
-      message: "Hello, I'm ChatGPT! Ask me anything!",
+      message: "Hello, I'm your personal Health Bot! You can ask me for tips on how to improve!",
       sentTime: "just now",
-      sender: "ChatGPT"
+      sender: "HealthBot"
     }
   ]);
   const [isTyping, setIsTyping] = useState(false);
@@ -42,7 +42,7 @@ function ChatBot() {
 
     let apiMessages = chatMessages.map((messageObject) => {
       let role = "";
-      if (messageObject.sender === "ChatGPT") {
+      if (messageObject.sender === "HealthBot") {
         role = "assistant";
       } else {
         role = "user";
@@ -84,7 +84,7 @@ function ChatBot() {
 
   return (
     <div className="ChatBot">
-      <div style={{ position:"relative", height: "800px", width: "700px"  }}>
+      <div style={{ position:"relative", height: "800px", width: "700px"   }}>
         <MainContainer>
           <ChatContainer>       
             <MessageList 
@@ -96,12 +96,11 @@ function ChatBot() {
                 return <Message key={i} model={message} />
               })}
             </MessageList>
-            <MessageInput placeholder="Type message here" onSend={handleSend} />        
+            <MessageInput   placeholder="Type message here"  onSend={handleSend}  />        
           </ChatContainer>
         </MainContainer>
-      </div>
+      </div> 
     </div>
   )
 }
-
 export default ChatBot
