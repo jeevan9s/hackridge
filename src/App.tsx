@@ -32,12 +32,13 @@ function App() {
               </div>
 
               {/* ChatBot Section */}
-              <div className="md:col-span-3 flex items-center justify-center">
+
+            </div>
+          </div>
+          <div className="md:col-span-3 flex items-center justify-center">
                 <div className="w-full h-full rounded-lg shadow-md bg-white p-4">
                   <ChatBot />
                 </div>
-              </div>
-            </div>
           </div>
         </main>
       </div>
