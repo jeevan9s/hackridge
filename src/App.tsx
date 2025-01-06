@@ -5,7 +5,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Sidebar } from '@/components/layout/Sidebar';
 import ChatBot from './components/health/ChatBot';
 import Streak from './components/Streak';
-import InfoForm from './Components/Info';
+import InfoForm from './components/Info';
 import Overview from './components/Overview';
 import AlarmPage from './components/Alert';
 

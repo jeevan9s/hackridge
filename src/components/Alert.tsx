@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import  { useState, useEffect, useRef } from 'react';
 import { Clock, Bell, BellOff } from 'lucide-react';
 
 export default function AlarmPage() {

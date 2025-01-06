@@ -1,5 +1,5 @@
 // src/components/views/Overview.jsx
-import React from 'react';
+
 import { BloodPressureChart } from '@/components/health/BloodPressureChart';
 import { HeartRateChart } from '@/components/health/HeartRateChart';
 import { CoreTemperatureChart } from '@/components/health/CoreTemperatureChart';

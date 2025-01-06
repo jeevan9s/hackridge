@@ -26,6 +26,8 @@ function ChatBot() {
     };
 
     const newMessages = [...messages, newMessage];
+
+    // @ts-ignore
     
     setMessages(newMessages);
 
@@ -93,6 +95,7 @@ function ChatBot() {
             >
               {messages.map((message, i) => {
                 console.log(message)
+                // @ts-ignore
                 return <Message key={i} model={message} />
               })}
             </MessageList>
