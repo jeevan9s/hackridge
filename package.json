@@ -2,13 +2,13 @@
   "name": "vite-react-typescript-starter",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.com/jeevan9s/HacktheRidge.git",
+  "homepage": "https://jeevan9s.github.io/HacktheRidge",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc -b && vite build",
     "predeploy": "npm run build",
-    "deploy": "npm run build && gh-pages -d dist",
+    "deploy": "npm run build && gh-pages -d dist -b v2",
     "lint": "eslint .",
     "preview": "vite preview"
   },
