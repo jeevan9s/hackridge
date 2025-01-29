@@ -8,7 +8,7 @@ const systemMessage = { //  Explain things like you're talking to a software pro
   "role": "system", "content": "the content you will be receiving is the latest values for heart rate, blood pressure, and respiratory rate. Based on these you should give professional healthcare advice including whether these values are in the healthy range, and then give advice such as diet improvements ." 
 }
 
-const API_KEY = "aaa"
+const yada = "yadadaydayd"
 
 function ChatBot() {
   const [messages, setMessages] = useState([
@@ -70,7 +70,7 @@ function ChatBot() {
     {
       method: "POST",
       headers: {
-        "Authorization": "Bearer " + API_KEY,
+        "Authorization": "Bearer " + yada,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(apiRequestBody)
